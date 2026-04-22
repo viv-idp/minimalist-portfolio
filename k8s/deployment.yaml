@@ -16,6 +16,7 @@ spec:
       containers:
       - name: backend
         image: venky2222/minimalist-portfolio-backend:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
         env:
@@ -29,6 +30,29 @@ spec:
           value: "us-central1"
         - name: PROXY_HEADER
           value: "pbxCzc_YRVfWiY_tOxhp-9QvpiVY1-nm"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 2
+          failureThreshold: 2
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -48,8 +72,32 @@ spec:
       containers:
       - name: frontend
         image: venky2222/minimalist-portfolio-frontend:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 2
+          failureThreshold: 2
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 500m
+            memory: 256Mi
 ---
 apiVersion: v1
 kind: Service
