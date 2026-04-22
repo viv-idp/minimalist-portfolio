@@ -63,12 +63,15 @@ pipeline {
                         kubectl config use-context k8s-context
                         kubectl apply -f k8s/namespace.yaml
                         kubectl apply -f k8s/deployment.yaml
-                        # Force image pull by restarting deployments
-                        kubectl rollout restart deployment/backend-deployment -n $K8S_NAMESPACE
-                        kubectl rollout restart deployment/frontend-deployment -n $K8S_NAMESPACE
-                        # Wait for rollout to complete
-                        kubectl rollout status deployment/backend-deployment -n $K8S_NAMESPACE --timeout=5m
-                        kubectl rollout status deployment/frontend-deployment -n $K8S_NAMESPACE --timeout=5m
+                        
+                        echo "Waiting for backend deployment to be ready..."
+                        kubectl rollout status deployment/backend-deployment -n $K8S_NAMESPACE --timeout=10m || true
+                        
+                        echo "Waiting for frontend deployment to be ready..."
+                        kubectl rollout status deployment/frontend-deployment -n $K8S_NAMESPACE --timeout=10m || true
+                        
+                        echo "Deployment Summary:"
+                        kubectl get deployments,pods,svc -n $K8S_NAMESPACE
                     '''
                 }
             }

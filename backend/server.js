@@ -310,6 +310,16 @@ app.post('/api-proxy', async (req, res) => {
   }
 });
 
+// Health check endpoint for Kubernetes probes
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'healthy', timestamp: new Date().toISOString() });
+});
+
+// Ready check endpoint
+app.get('/ready', (req, res) => {
+  res.status(200).json({ status: 'ready', timestamp: new Date().toISOString() });
+});
+
 const server = app.listen(PORT, API_BACKEND_HOST, () => {
   console.log(`Vertex AI Backend listening at http://localhost:${PORT}`);
 });
