@@ -7,6 +7,15 @@ pipeline {
         K8S_NAMESPACE = 'minimalist-portfolio-ns'
     }
 
+    triggers {
+        githubPush()
+    }
+
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timestamps()
+    }
+
     stages {
         stage('Checkout') {
             steps {
