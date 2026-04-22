@@ -91,7 +91,7 @@
       color: #fafafa; /* zinc-50 */
       overflow-x: hidden;
     }
-
+    
     @media (pointer: fine) {
       body {
         cursor: none;
@@ -100,8 +100,9 @@
         cursor: none;
       }
     }
-
+    
     /* Subtle noise texture overlay */
+    
     .bg-noise {
       position: fixed;
       inset: 0;
@@ -109,8 +110,9 @@
       pointer-events: none;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
     }
-
+    
     /* Tech Grid Background */
+    
     .bg-grid {
       position: fixed;
       inset: 0;
@@ -123,35 +125,42 @@
       mask-image: radial-gradient(circle at center, black, transparent 80%);
       -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
     }
-
+    
     /* Custom scrollbar */
+    
     ::-webkit-scrollbar {
       width: 6px;
     }
+    
     ::-webkit-scrollbar-track {
       background: #09090b; 
     }
+    
     ::-webkit-scrollbar-thumb {
       background: #27272a; 
       border-radius: 10px;
     }
+    
     ::-webkit-scrollbar-thumb:hover {
       background: #10b981; 
     }
-
+    
     /* Scroll Reveal Base Classes */
+    
     .reveal {
       opacity: 0;
       transform: translateY(40px) scale(0.98);
       transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       will-change: opacity, transform;
     }
+    
     .reveal.is-visible {
       opacity: 1;
       transform: translateY(0) scale(1);
     }
-
+    
     /* Spotlight effect */
+    
     .spotlight {
       position: fixed;
       inset: 0;
@@ -160,8 +169,9 @@
       background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(16, 185, 129, 0.04), transparent 40%);
       transition: background 0.1s ease;
     }
-
+    
     /* Custom Cursor Styles */
+    
     .cursor-dot {
       position: fixed;
       top: 0;
@@ -175,6 +185,7 @@
       transform: translate(-50%, -50%);
       transition: width 0.2s, height 0.2s, background-color 0.2s;
     }
+    
     .cursor-outline {
       position: fixed;
       top: 0;
@@ -188,10 +199,12 @@
       transform: translate(-50%, -50%);
       transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
     }
+    
     .cursor-hover .cursor-dot {
       width: 0;
       height: 0;
     }
+    
     .cursor-hover .cursor-outline {
       width: 60px;
       height: 60px;
@@ -199,11 +212,13 @@
       border-color: rgba(16, 185, 129, 0.8);
       backdrop-filter: blur(2px);
     }
-
+    
     /* Glowing Border Card Effect */
+    
     .glow-card {
       position: relative;
     }
+    
     .glow-card::before {
       content: "";
       position: absolute;
@@ -217,19 +232,23 @@
       pointer-events: none;
       transition: background 0.5s ease;
     }
+    
     .glow-card:hover::before {
       background: linear-gradient(to bottom right, #10b981, rgba(16, 185, 129, 0.1));
     }
-
+    
     /* Hide scrollbar for marquee */
+    
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
+    
     .no-scrollbar {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
   </style>
+    <script type="module" crossorigin src="/assets/index-CzMGY60C.js"></script>
   </head>
 <body class="antialiased selection:bg-accent/30 selection:text-accent">
   <div class="bg-noise"></div>
@@ -244,7 +263,5 @@
       spotlight.style.setProperty('--mouse-x', `${e.clientX}px`);
       spotlight.style.setProperty('--mouse-y', `${e.clientY}px`);
     });
-  </script>
-  <script type="module" src="./index.tsx"></script>
-<script type="module" src="/index.js"></script></body>
+  </script></body>
 </html>

@@ -9,9 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "latest",
     "react": "latest",
+    "react-countup": "^6.5.3",
     "react-dom": "latest",
-    "lucide-react": "latest"
+    "react-intersection-observer": "^10.0.3",
+    "react-particles": "^2.12.2",
+    "tsparticles": "^3.9.1"
   },
   "devDependencies": {
     "@types/node": "latest",
