@@ -72,3 +72,4 @@ pipeline {
         }
     }
 }
+// added line to trigger pipeline on commit to main branch
