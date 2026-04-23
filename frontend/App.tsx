@@ -18,10 +18,10 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen font-sans animate-[fadeIn_1s_ease-out] dark">
-        <ParticleBackground />
+      <div className="min-h-screen font-sans animate-[fadeIn_1s_ease-out]">
         <Cursor />
         <ThemeToggle />
+        <ParticleBackground />
 
         {loading ? (
           <Loader onComplete={() => setLoading(false)} />
