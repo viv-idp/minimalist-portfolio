@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage('📥 Checkout Source Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/viv-idp/minimalist-portfolio.git'
+                git branch: 'debug-branch', url: 'https://github.com/viv-idp/minimalist-portfolio.git'
             }
         }
 
