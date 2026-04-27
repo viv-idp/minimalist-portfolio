@@ -67,15 +67,19 @@ pipeline {
                         kubectl config set-context k8s-context --cluster=k8s-cluster --user=jenkins --namespace=$K8S_NAMESPACE
                         kubectl config use-context k8s-context
 
+                        echo "🏷️  Injecting image tag :$BUILD_NUMBER into manifests..."
+                        sed -i "s|image: venky2222/minimalist-portfolio-backend:latest|image: venky2222/minimalist-portfolio-backend:$BUILD_NUMBER|g" k8s/deployment.yaml
+                        sed -i "s|image: venky2222/minimalist-portfolio-frontend:latest|image: venky2222/minimalist-portfolio-frontend:$BUILD_NUMBER|g" k8s/deployment.yaml
+
                         echo "📦 Applying Kubernetes manifests..."
                         kubectl apply -f k8s/namespace.yaml
                         kubectl apply -f k8s/deployment.yaml
 
                         echo "⏳ Waiting for backend rollout..."
-                        kubectl rollout status deployment/backend-deployment -n $K8S_NAMESPACE --timeout=10m || true
+                        kubectl rollout status deployment/backend-deployment -n $K8S_NAMESPACE --timeout=10m
 
                         echo "⏳ Waiting for frontend rollout..."
-                        kubectl rollout status deployment/frontend-deployment -n $K8S_NAMESPACE --timeout=10m || true
+                        kubectl rollout status deployment/frontend-deployment -n $K8S_NAMESPACE --timeout=10m
 
                         echo "✅ Deployment Summary:"
                         kubectl get deployments,pods,svc -n $K8S_NAMESPACE
