@@ -31,17 +31,11 @@ spec:
         - name: API_BACKEND_PORT
           value: "5000"
         - name: GOOGLE_CLOUD_PROJECT
-          valueFrom:
-            secretKeyRef:
-              name: backend-secrets
-              key: GOOGLE_CLOUD_PROJECT
+          value: "godl-project"
         - name: GOOGLE_CLOUD_LOCATION
           value: "us-central1"
         - name: PROXY_HEADER
-          valueFrom:
-            secretKeyRef:
-              name: backend-secrets
-              key: PROXY_HEADER
+          value: "pbxCzc_YRVfWiY_tOxhp-9QvpiVY1-nm"
         livenessProbe:
           httpGet:
             path: /health
