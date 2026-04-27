@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bandi Venkatesh | DevOps Engineer</title>
+  <meta name="description" content="DevOps Engineer specializing in Kubernetes, GCP, Terraform, CI/CD, and cloud infrastructure. Building and operating production-grade platforms.">
+  <meta name="author" content="Bandi Venkatesh">
+  <meta name="theme-color" content="#09090b">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bandi Venkatesh | DevOps Engineer">
+  <meta property="og:description" content="DevOps Engineer specializing in Kubernetes, GCP, Terraform, CI/CD, and cloud infrastructure.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bandi Venkatesh | DevOps Engineer">
+  <meta name="twitter:description" content="DevOps Engineer specializing in Kubernetes, GCP, Terraform, CI/CD, and cloud infrastructure.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace'],
+            terminal: ['Fira Code', 'monospace'],
+          },
+          colors: {
+            accent: {
+              DEFAULT: '#10b981',
+              glow: 'rgba(16, 185, 129, 0.15)',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'float-delayed': 'float 6s ease-in-out 3s infinite',
+            'marquee': 'marquee 30s linear infinite',
+            'marquee-reverse': 'marquee-reverse 30s linear infinite',
+            'blink': 'blink 1s step-end infinite',
+            'fadeIn': 'fadeIn 1s ease-out forwards',
+            'slideUp': 'slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+            'scaleIn': 'scaleIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+            'shimmer': 'shimmer 2s linear infinite',
+            'gradientShift': 'gradientShift 8s ease infinite',
+            'spin-slow': 'spin 8s linear infinite',
+            'counter': 'counter 2s ease-out forwards',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            'marquee-reverse': {
+              '0%': { transform: 'translateX(-50%)' },
+              '100%': { transform: 'translateX(0%)' },
+            },
+            blink: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            scaleIn: {
+              '0%': { opacity: '0', transform: 'scale(0.9)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            },
+            gradientShift: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;800&family=Space+Grotesk:wght@400;500;600&display=swap');
+    
+    body {
+      background-color: #09090b; /* zinc-950 */
+      color: #fafafa; /* zinc-50 */
+      overflow-x: hidden;
+    }
+
+    @media (pointer: fine) {
+      *, *::before, *::after {
+        cursor: none !important;
+      }
+    }
+
+    /* Subtle noise texture overlay */
+    .bg-noise {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+
+    /* Tech Grid Background */
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-size: 50px 50px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      mask-image: radial-gradient(circle at center, black, transparent 80%);
+      -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #09090b; 
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #27272a; 
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #10b981; 
+    }
+
+    /* Scroll Reveal Base Classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px) scale(0.98);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Spotlight effect */
+    .spotlight {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(16, 185, 129, 0.04), transparent 40%);
+      transition: background 0.1s ease;
+    }
+
+    /* Custom Cursor Styles */
+    .cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      will-change: left, top, width, height;
+      transition: width 0.15s ease, height 0.15s ease, opacity 0.3s ease;
+      mix-blend-mode: difference;
+    }
+    .cursor-outline {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid rgba(16, 185, 129, 0.6);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99998;
+      transform: translate(-50%, -50%);
+      will-change: left, top, width, height;
+      transition: width 0.15s ease, height 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, opacity 0.3s ease;
+    }
+    .cursor-hover .cursor-dot {
+      width: 0;
+      height: 0;
+    }
+    .cursor-hover .cursor-outline {
+      width: 56px;
+      height: 56px;
+      background-color: rgba(16, 185, 129, 0.1);
+      border-color: rgba(16, 185, 129, 0.8);
+      backdrop-filter: blur(2px);
+    }
+
+    /* Glowing Border Card Effect */
+    .glow-card {
+      position: relative;
+    }
+    .glow-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.01));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      transition: background 0.5s ease;
+    }
+    .glow-card:hover::before {
+      background: linear-gradient(to bottom right, #10b981, rgba(16, 185, 129, 0.1));
+    }
+
+    /* Hide scrollbar for marquee */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Marquee pause on hover */
+    .marquee-container:hover .animate-marquee,
+    .marquee-container:hover .animate-marquee-reverse {
+      animation-play-state: paused;
+    }
+
+    /* Scroll progress bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10b981, #34d399, #6ee7b7, #10b981);
+      background-size: 300% 100%;
+      animation: gradientShift 3s ease infinite;
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 100;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10b981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+    .back-to-top:hover {
+      background: rgba(16, 185, 129, 0.3);
+      border-color: #10b981;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Animated gradient text */
+    .gradient-text-animate {
+      background: linear-gradient(90deg, #10b981, #34d399, #6ee7b7, #a7f3d0, #10b981);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3s linear infinite;
+    }
+
+    /* Glitch text effect for loader */
+    .glitch {
+      position: relative;
+    }
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .glitch::before {
+      left: 2px;
+      text-shadow: -2px 0 #ff00de;
+      clip-path: inset(0 0 0 0);
+      animation: glitch-before 3s infinite linear alternate-reverse;
+    }
+    .glitch::after {
+      left: -2px;
+      text-shadow: 2px 0 #00fff9;
+      clip-path: inset(0 0 0 0);
+      animation: glitch-after 2s infinite linear alternate-reverse;
+    }
+    @keyframes glitch-before {
+      0% { clip-path: inset(0 0 100% 0); }
+      5% { clip-path: inset(45% 0 40% 0); }
+      10% { clip-path: inset(0 0 100% 0); }
+      15% { clip-path: inset(80% 0 5% 0); }
+      20% { clip-path: inset(0 0 100% 0); }
+      100% { clip-path: inset(0 0 100% 0); }
+    }
+    @keyframes glitch-after {
+      0% { clip-path: inset(100% 0 0 0); }
+      5% { clip-path: inset(20% 0 60% 0); }
+      10% { clip-path: inset(100% 0 0 0); }
+      15% { clip-path: inset(10% 0 70% 0); }
+      20% { clip-path: inset(100% 0 0 0); }
+      100% { clip-path: inset(100% 0 0 0); }
+    }
+
+    /* Loader exit animation */
+    .loader-exit {
+      animation: loaderExit 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    @keyframes loaderExit {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.05); filter: blur(10px); }
+    }
+
+    /* Content enter animation */
+    .content-enter {
+      animation: contentEnter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
+    }
+    @keyframes contentEnter {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Particle canvas */
+    #particle-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Project card hover effect */
+    .project-card {
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(16, 185, 129, 0.15);
+    }
+
+    /* Stat counter animation */
+    .stat-item {
+      transition: all 0.3s ease;
+    }
+    .stat-item:hover {
+      transform: translateY(-4px);
+    }
+    .stat-item:hover .stat-value {
+      color: #10b981;
+      text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+    }
+
+    /* Animated border for active nav link */
+    .nav-link-active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #10b981;
+      border-radius: 2px;
+    }
+
+    /* Section divider animation */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5), transparent);
+      animation: shimmer 3s linear infinite;
+      background-size: 200% 100%;
+    }
+  </style>
+  </head>
+<body class="antialiased selection:bg-accent/30 selection:text-accent">
+  <div class="bg-noise"></div>
+  <div class="bg-grid"></div>
+  <div id="spotlight" class="spotlight" style="--mouse-x: 50vw; --mouse-y: 50vh;"></div>
+  <div id="root" class="relative z-10"></div>
+  
+  <script>
+    // Handle spotlight effect outside React for better performance
+    const spotlight = document.getElementById('spotlight');
+    window.addEventListener('mousemove', (e) => {
+      spotlight.style.setProperty('--mouse-x', `${e.clientX}px`);
+      spotlight.style.setProperty('--mouse-y', `${e.clientY}px`);
+    });
+  </script>
+  <script type="module" src="./index.tsx"></script>
+</body>
+</html>
